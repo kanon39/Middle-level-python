@@ -73,7 +73,7 @@ p3 = Point3(45, y=20)
 p4 = Point4(10,20,30,40)
  # 딕셔너리의 경우 언패킹할경우 알아서 namedtuple로 된다.
 p5 = Point3(**temp_dict)
-print()
+
 print(p1)
 print(p2)
 print(p3)
@@ -139,5 +139,4 @@ for s in students2:
 # NamedTuple은 가공하려는 데이터를
 # 데이터 타입형태로 사용할 수 있다는 것이다.
 # 이 네임드튜플형태를 원하는대로 딕셔너리 형태로, json 형태로 변환해서 사용할 수 있다.
-
 # 다음시간에 시퀀스를 다뤄보도록 하겠다.
