@@ -95,7 +95,7 @@ print(id(car1.__class__), id(car2.__class__))
 print(id(car1.__class__) == id(car2.__class__) == id(car3.__class__)) # True 나옴
 
 # 에러
-#Car.detail_info() 
+# Car.detail_info() 
 # 이때 타입에러인  missing 1 required positional argument : 'self'에러 발생
 # detail_info 함수를 보면 첫번째 print에 self id값을 출력하고
 # 두번째 print에 self의 company와 price를 출력하는데 인자를 넘기지 않았다.()가 비어있음
