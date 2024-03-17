@@ -72,4 +72,42 @@ print()
 
 # 파이썬에서 정렬을 검색하면 sort와 sorted 두개가 나온다.
 # 이 두개는 경우에 맞게 잘 사용해야 된다.
-# reverse(정렬 반대), key=len(키 길이옵션), key=str.lower(소문자로 정렬), key=func... (내가만든함수기준 정렬)
+# sort, sorted 옵션 : reverse(정렬 반대), key=len(값 길이로 정렬), key=str.lower(소문자로 정렬), key=func... (내가만든함수기준 정렬)
+
+# sorted : 정렬 후 새로운 객체 반환 -> 원본 수정 안됨!!
+# sort : 정률 후 객채 직접 반환 -> 원본 직접 수정됨!
+# f_list 원본
+f_list = ['orange', 'apple', 'mango', 'papaya', 'lemon',' strawberry', 'coconut']
+# sorted는 원본 반환 안되고 새로운 객체가반환됨
+print('sorted - ', sorted(f_list))
+print('sorted - ', sorted(f_list, reverse=True))
+print('sorted - ', sorted(f_list, key=len))
+# 외부에서 함수만들어도 되나 이럴때 lambda 함수를 씀
+# x[-1] 을 쓰면 마지막 글자를 기준으로 정렬됨
+print('sorted - ', sorted(f_list, key=lambda x : x[-1]))
+print('sorted - ', sorted(f_list, key=lambda x : x[-1], reverse = True))
+# 원본과 비교
+print(f_list)
+
+# sort : 정렬 후 객체 직접변경
+
+# 반환 값 확인(None)
+# sort를 쓸때는 이 값을 직접 반환할꺼야 라는느낌으로 f_list 점찍고 sort()함수를 적어준다.
+# 이경우 f_list.sort()값은 None이 나오는데, 이는 반환할 값이 없기 때문
+# f_list를 실행해보면 원본이 직접 변경됨을 알 수 있다.
+print('sort -', f_list.sort(), f_list)
+print('sort -', f_list.sort(), f_list(reverse=True), f_list)
+print('sort -', f_list.sort(), f_list(key=len), f_list)
+print('sort -', f_list.sort(), f_list(key=lambda x : x[-1]), f_list)
+print('sort -', f_list.sort(), f_list(key=lambda x : x[-1], reverse=True), f_list)
+
+# list vs array 적합한 사용법 설명
+# 업계에서 어떻게 설명할지 많이찾아본 결과 요약하면 아래와 같다.
+# list 기반 : 융통성, 컨테이너 타입으로 다양한 데이터 타입을 담을 수있고 범용적 사용
+# 숫자 기반 : 숫자 기반일 때는 array를 쓰는게 좋다. 머신러닝, 딥러닝, 기계학습등에서 정말 많은 데이터를 묶어서 고속의 연산을 쓸때
+# -> 다만 array(배열)은 리스트와 거의 호환된다.
+# -> 숫자로만 구성되어 있다면 array를 쓰는 것을 권장하고
+# -> 문자 등 여러 데이터로 구성되어 있으면 list 쓰는 것을 권장한다.
+# Json 같은 경우는 딕셔너리로 받을 수 있겠다.
+
+# sort와 sorted의 차이는 반드시 알아두자.
