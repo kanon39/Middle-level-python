@@ -80,3 +80,4 @@ from unicodedata import name
 # 유니코드의 반환문자값을 보기 위해서 위 패키지 임포트
 # name이 값이 있다면 char(i)이고 없다면 공백처리
 print({name(chr(i), '') for i in range(0,256)})
+
