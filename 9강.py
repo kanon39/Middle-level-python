@@ -85,4 +85,6 @@ print(new_dict3)
 print()
 print()
 
-# 다음시간엔 set을 다뤄보겠다.
+
+
+
