@@ -86,7 +86,7 @@ print(next(wi))
 print(next(wi))
 print(next(wi))
 print(next(wi))
-
+#print(next(wi))
 # 하지만 next 패턴은 불편하다. 예외처리에 index +1도해야한다.
 
 # 똑같은 예제를 이번엔 제너레이터 패턴으로 작성해보겠다.
