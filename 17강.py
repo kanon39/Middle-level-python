@@ -59,8 +59,8 @@
 # GIL 을 우회하는 법 : 멀티프로세싱 사용, CPython 활용
  
 
-# concurrent.futures map
-# concurrent.futures wait, as_completed
+# concurrent.futures 사용법1
+# concurrent.futures 사용법2
 
 
 import os
@@ -113,11 +113,9 @@ def main() :
 # 지금까지는 실행을 그냥했지만
 # 이제는 main 함수의 진입점을 알려줘야 됨
 
-#if __name__ =='__main__' : # 시작점을 명시적으로 작성 안그러면 멀티프로세싱 작업시 실행 안됨.
-#   main()
+if __name__ =='__main__' : # 시작점을 명시적으로 작성 안그러면 멀티프로세싱 작업시 실행 안됨.
+   main()
    
 
-# 지금까지 단순히 프로세스와 스레드 두개로 실행을 해봤다면
-# 동시성 처리를 응용할 수도 있다.
-# 이때 가장 많이 사용되는 wait과 as_completed 가 있다.
+
 
