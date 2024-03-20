@@ -75,6 +75,7 @@ print('Ex2 > ', d_list) # d_list만 변경되고 c_list는 변경되지 않음�
 
 # Ex3 - Deep copy (깊은 복사)
 # 정확히 복사이기때문에 느리고 그만큼 또 메모리를 잡아먹는다.
+
 e_list =  [1,2,3, [4,5,6], [7,8,9]]
 f_list = copy.deepcopy(e_list)
 
