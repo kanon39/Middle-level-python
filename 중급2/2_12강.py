@@ -70,6 +70,7 @@ print('Ex1 > ', dir(c1))
 
 # 아래처럼되어 있을 때 실행순서는
 # type을 상속받는 순산부터 new > init > call 순서로 커스텀 가능
+# 이렇게 연계되어 쓰이기 때문에 return이 꼭 필요
 # 여기까지 안해도됨. 저 위까지 ex1까지만 해도 차고넘침.
 def cus_mul(self, d) :
     for i in range(len(self)) :
