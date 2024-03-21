@@ -118,8 +118,8 @@ class Car():
 
 
 car1 = Car('Ferrari',{'color':'White','horsepower':400,'price' : 8000})
-car2 = Car('Ferrari',{'color':'Black','horsepower':270,'price' : 5000})
-car3 = Car('Ferrari',{'color':'Silver','horsepower':300,'price' : 6000})
+car2 = Car('Bmw',{'color':'Black','horsepower':270,'price' : 5000})
+car3 = Car('Audi',{'color':'Silver','horsepower':300,'price' : 6000})
 
 
 print(car1)
