@@ -120,5 +120,5 @@ for i in range(1,10) :
         globals()['plus_{}_{}'.format(i,k)] = i+k
       
 print(globals()) # 구구단으로 이루어진 값을 동적으로 할당 가능
-print(plus_5_5) # 10 출력됨
+#print(plus_5_5) # 10 출력됨
   
