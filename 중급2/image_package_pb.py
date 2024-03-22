@@ -72,10 +72,19 @@ from imcvtP.converter import GifConverter as
 path_in = 'E:/Study/Python/Middle_level_python_강의자료/수업자료/예제파일/project/images/*.png'
 path_out = 'E:/Study/Python/Middle_level_python_강의자료/수업자료/예제파일/project/image_out/result.gif'
 
-from imcvtP.converter import GifConverter as Gifc
+from imcvtP.converter import GifConverter 
+
+
+# 사용자 접근예시
+# import 했으므로 GifConverter를 먼저 찾아봄
+print(dir(GifConverter))
 
 # 클래스
-c = Gifc(path_in, path_out,(320,240))
-# 반환
+c = GifConverter(path_in, path_out,(320,240))
+# 이 c가 뭐지?
+c.__doc__
+# 안나오네, 그럼 한번 더 접근해볼까 -> 한글떄문에 안나오는것으로 추정됨
+dir(c)
+# convert_gif라는 얘를 한번 실행해봐야겠다. 
 c.convert_gif()
 
