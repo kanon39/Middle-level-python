@@ -6,7 +6,7 @@ Keyword - PyPI, build, package deploy
 
 # py_ad_2_17 완성된 패키지 임포트
 
-from py_ad_2_17 import GifConverter as gfc
+from TransToClass2_16 import GifConverter as gfc
 path_in = 'E:/Study/Python/Middle_level_python_강의자료/수업자료/예제파일/project/images/*.png'
 path_out = 'E:/Study/Python/Middle_level_python_강의자료/수업자료/예제파일/project/image_out/result.gif'
 

@@ -1,4 +1,4 @@
-# pygifconvt
+# imcvtP
 
 ## Table of Contents
   * [Installation](#installation)
@@ -10,9 +10,9 @@
 Download using pip via pypi.
 
 ```bash
-$ pip install 'package' --upgrade
+$ pip install 'imcvtP' --upgrade
   or
-$ pip install git+'repository'
+$ pip install git+https://github.com/kanon39/imcvtP.git
 ```
 (Mac/homebrew users may need to use ``pip3``)
 
