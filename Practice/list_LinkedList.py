@@ -8,9 +8,10 @@
 # 어떤 값도 들어가지않으면 value는 0으로,
 # next address는 None으로 초기화함.
 class Node :
-    def __init__(self, value=0, next = None) :
+    def __init__(self, value=0) :
         self.value = value
-        self.next = next
+        self.next = None
+        
         
 
 first = Node(1)
@@ -46,6 +47,7 @@ class LinkedList(object) :
 # 노드가 처음 생성될 때랑 그 다음부터는 기능 구현이다르겠구나.
         if self.head is None :
             self.head = new_node
+            self.tail = new_node
         else :
         # 마지막 노드가 뉴 노드를 가리키게끔 바뀌어야 한다.
             current = self.head
@@ -69,4 +71,66 @@ ll.append(4)
 # 코드는 상황과 사람에 따라서 항상 바뀔수밖에없을 것이다. 
 
 
+# Linked List에는 다음의 것들이 있다.
+# 특정 인덱스에 저장되어 있는 값들을 반환하는 get operation,
+# 파이썬 append 와 같은 insert_back
+# append와 달리 앞에추가하는 insert_front
+# 링크드리스트 중간에 데이터 삽입하는 insert_at
+# 데이터를 추가했으면 삭제하는 것도 있으므로 remove_back
+# remove_front()
+# remove_at
+# ....
 
+# 이중 배울 내용이 많은 오퍼레이션을 선별해서 구현해 보겠다.
+ 
+# get 오퍼레이션
+# 몇번째 입력값을 받아야 되므로 idx를 인수로 추가한다.
+
+class LinkedList() :
+    def __init__ (self) :
+        self.head = None
+        
+    def append(self, value) : # 앞에서 구현 -> 시간복잡도도 O(n) 임.
+        new_node = Node(value)
+        self.head = new_node
+        if self.head is None :
+            self.head = new_node
+        else :
+            current = self.head
+            while (current.next) :
+               current = current.next
+            current.next = new_node
+            
+    def get(self, idx) :
+        # linkedList에서 특정 인덱스에 저장되어 있는 값을 알려면
+        # 일단 그 값까지 가야된다.
+        # arrayList 처럼 랜덤 엑세스가 되는게 아니기 때문에
+        # current를 한칸씩, 한칸씩, 한칸씩 움직여야 그곳에 저장돼 있는 value를 리턴할 수 있다.
+        # 만약 array라면 시간복잡도가 O(1)으로 원하는 인덱스에 갈 수 있을텐데
+        # 링크트리스트로 가려면 무조건 head를 통해서 가고 인덱스 수만큼 시간복잡도가 늘어나므로
+        # 링크드 리스트의 시간복잡도는 O(n)이다.
+        
+        # Task 1. head에 접근
+        # Task 2. 원하는 index로 이동
+        # Task 3. value 반환
+        # 첫시도 - 실패 (append가 앞서 진행되어 이미 self.head가 끝 값을 가르키고있음.)
+        # current = self.head
+        # n = 1
+        # if idx == 0 :
+        #     return current.value
+        # elif idx > 0 :    
+        #     while n == (idx) :
+        #         current = current.next
+        #         n += 1
+        #     return current.value
+        current = self.head
+        for _ in range(idx) :
+            current = current.next
+        return current.value
+    
+ll = LinkedList()
+ll.append(1)
+ll.append(2)
+ll.append(3)
+ll.append(4)
+print(ll.get(1)) # 첫시도 실패이유와 동일하여 원하는 자릿수 출력 불가.
