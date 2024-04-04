@@ -8,9 +8,9 @@
 # 어떤 값도 들어가지않으면 value는 0으로,
 # next address는 None으로 초기화함.
 class Node :
-    def __init__(self, value=0) :
+    def __init__(self, value=0, next=None) :
         self.value = value
-        self.next = None
+        self.next = next
         
         
 
@@ -42,12 +42,10 @@ class LinkedList(object) :
         
     def append(self, value) :
         new_node = Node(value)
-        self.head = new_node
 # 이떄 새로운 new_node가 만들어질때마다 head는그 노드를 가르키게됨.
 # 노드가 처음 생성될 때랑 그 다음부터는 기능 구현이다르겠구나.
         if self.head is None :
             self.head = new_node
-            self.tail = new_node
         else :
         # 마지막 노드가 뉴 노드를 가리키게끔 바뀌어야 한다.
             current = self.head
@@ -92,7 +90,6 @@ class LinkedList() :
         
     def append(self, value) : # 앞에서 구현 -> 시간복잡도도 O(n) 임.
         new_node = Node(value)
-        self.head = new_node
         if self.head is None :
             self.head = new_node
         else :
@@ -109,20 +106,6 @@ class LinkedList() :
         # 만약 array라면 시간복잡도가 O(1)으로 원하는 인덱스에 갈 수 있을텐데
         # 링크트리스트로 가려면 무조건 head를 통해서 가고 인덱스 수만큼 시간복잡도가 늘어나므로
         # 링크드 리스트의 시간복잡도는 O(n)이다.
-        
-        # Task 1. head에 접근
-        # Task 2. 원하는 index로 이동
-        # Task 3. value 반환
-        # 첫시도 - 실패 (append가 앞서 진행되어 이미 self.head가 끝 값을 가르키고있음.)
-        # current = self.head
-        # n = 1
-        # if idx == 0 :
-        #     return current.value
-        # elif idx > 0 :    
-        #     while n == (idx) :
-        #         current = current.next
-        #         n += 1
-        #     return current.value
         current = self.head
         for _ in range(idx) :
             current = current.next
@@ -133,4 +116,5 @@ ll.append(1)
 ll.append(2)
 ll.append(3)
 ll.append(4)
-print(ll.get(1)) # 첫시도 실패이유와 동일하여 원하는 자릿수 출력 불가.
+print(ll.get(1)) 
+
